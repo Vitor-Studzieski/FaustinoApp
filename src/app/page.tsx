@@ -23,7 +23,7 @@ export default function Home() {
       <main className={styles.mainContent}>
         <div className={styles.logoWrapper}>
           <Image 
-            src="/logo.png" 
+            src="/logo-app.png" 
             alt="Logo Faustino" 
             width={250} 
             height={250} 
