@@ -1,0 +1,156 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #4a0055;
+  background: linear-gradient(135deg, #4a0055 0%, #2a0030 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.backgroundShape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(180px);
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.shape1 {
+  top: -15%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  background-color: #7a008b;
+}
+
+.shape2 {
+  bottom: -15%;
+  right: -15%;
+  width: 600px;
+  height: 600px;
+  background-color: #ffbc00;
+  opacity: 0.4;
+}
+
+.loginCard {
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  max-width: 400px;
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideUp 0.6s ease-out;
+}
+
+.logoContainer {
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  margin-left: 4px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #4a0055;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(74, 0, 85, 0.1);
+}
+
+.forgotPassword {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  color: #4a0055;
+  font-weight: 600;
+  margin-top: -5px;
+  cursor: pointer;
+}
+
+.button {
+  margin-top: 1rem;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: #4a0055;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 10px 20px rgba(74, 0, 85, 0.2);
+}
+
+.button:hover {
+  background-color: #60006e;
+  transform: translateY(-2px);
+}
+
+.footerLink {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footerLink a {
+  color: #4a0055;
+  font-weight: bold;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

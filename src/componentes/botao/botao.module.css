@@ -1,0 +1,37 @@
+.botao {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  padding: 14px;
+  border-radius: 50px; /* Mais ovalado para o visual profissional */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Adicionamos box-shadow para hover */
+  border: none;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+.botao:hover {
+  transform: translateY(-3px) scale(1.02); /* Leve levantamento e escala */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+/* Variantes */
+.primario {
+  background-color: var(--cor-branca);
+  color: var(--cor-texto); /* Texto preto */
+}
+
+.secundario {
+  background-color: transparent; /* Fundo transparente */
+  color: var(--cor-branca); /* Texto branco */
+  border: 2px solid var(--cor-branca); /* Borda branca */
+  box-shadow: none; /* Remove a sombra padrão para não "competir" com a borda */
+}
+
+.secundario:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo branco sutil no hover */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); /* Sombra branca suave */
+}

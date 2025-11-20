@@ -1,0 +1,16 @@
+:root {
+  --cor-principal: #420042;
+  --cor-branca: #FFFFFF;
+  --cor-texto: #000000;
+}
+
+body {
+  background-color: var(--cor-principal);
+  color: var(--cor-branca);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
