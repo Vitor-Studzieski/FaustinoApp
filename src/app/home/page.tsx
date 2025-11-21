@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link'; // <--- 1. Importe o Link aqui
+import Link from 'next/link';
 import styles from './home.module.css';
 
 export default function HomePage() {
@@ -94,19 +94,25 @@ export default function HomePage() {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>O que você quer hoje?</h2>
         <div className={styles.categoriesGrid}>
-          {categorias.map((cat, index) => (
-            <div key={index} className={styles.categoryItem}>
-              <div className={styles.categoryIcon} style={{ backgroundColor: cat.cor }}>
-                <Image 
-                  src={cat.img} 
-                  alt={cat.nome} 
-                  width={70} 
-                  height={70} 
-                  style={{ objectFit: 'contain' }}
-                />
+          {categorias.map((cat) => (
+            <Link 
+              href={cat.nome === 'Promoções' ? '/cupons' : '#'} 
+              key={cat.nome} 
+              style={{textDecoration: 'none'}}
+            >
+              <div className={styles.categoryItem}>
+                <div className={styles.categoryIcon} style={{ backgroundColor: cat.cor }}>
+                  <Image 
+                    src={cat.img} 
+                    alt={cat.nome} 
+                    width={70} 
+                    height={70} 
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+                <span className={styles.categoryName}>{cat.nome}</span>
               </div>
-              <span className={styles.categoryName}>{cat.nome}</span>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -116,10 +122,6 @@ export default function HomePage() {
         
         <div className={styles.establishmentList}>
           {estabelecimentos.map((loja) => (
-            /* AQUI ESTÁ A MÁGICA:
-               Verificamos se o nome é 'Jacaré Brasil'.
-               Se for, o link vai para '/loja'. Se não, vai para '#' (lugar nenhum).
-            */
             <Link 
               key={loja.id} 
               href={loja.nome === 'Jacaré Brasil' ? '/loja' : '#'}

@@ -1,0 +1,219 @@
+.container {
+  min-height: 100vh;
+  background-color: #f7f9fc;
+  padding-bottom: 80px; /* Espaço para navbar */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header Simples com Voltar */
+.header {
+  background-color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.pageTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Área de Destaque (Input) */
+.heroSection {
+  background-color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.heroImage {
+  margin-bottom: 20px;
+}
+
+.heroTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.heroSubtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Campo de Input */
+.inputWrapper {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.labelInput {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  align-self: flex-start;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.couponInput {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  text-transform: uppercase; /* Cupons geralmente são maiúsculos */
+}
+
+.couponInput:focus {
+  border-color: #e30000;
+}
+
+.redeemButton {
+  background-color: #e30000; /* Vermelho Ação */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.redeemButton:hover {
+  background-color: #b90000;
+}
+
+/* Lista de Cupons Disponíveis */
+.listSection {
+  padding: 20px;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.couponCard {
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+/* Efeito de "ticket" picotado */
+.couponLeft {
+  background-color: #e30000;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-right: 2px dashed rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.couponIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.couponContent {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.couponCode {
+  font-size: 0.8rem;
+  color: #e30000;
+  font-weight: 700;
+  background-color: #ffe5e5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+.couponDesc {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.couponValid {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.useButton {
+  color: #e30000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+/* Bottom Nav (Igual da Home) */
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  z-index: 20;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #999;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navItem.active {
+  color: #e30000;
+  font-weight: 600;
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+}
