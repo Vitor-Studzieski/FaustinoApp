@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link'; // <--- 1. Importe o Link aqui
 import styles from './home.module.css';
 
 export default function HomePage() {
@@ -99,8 +100,8 @@ export default function HomePage() {
                 <Image 
                   src={cat.img} 
                   alt={cat.nome} 
-                  width={80} 
-                  height={80} 
+                  width={70} 
+                  height={70} 
                   style={{ objectFit: 'contain' }}
                 />
               </div>
@@ -115,36 +116,46 @@ export default function HomePage() {
         
         <div className={styles.establishmentList}>
           {estabelecimentos.map((loja) => (
-            <div key={loja.id} className={styles.card}>
-              <div className={styles.cardImageWrapper}>
-                 <Image 
-                   src={loja.img} 
-                   alt={loja.nome} 
-                   width={70} 
-                   height={70} 
-                   style={{ objectFit: 'cover' }}
-                 />
-              </div>
-              
-              <div className={styles.cardInfo}>
-                <div className={styles.storeName}>{loja.nome}</div>
+            /* AQUI ESTÁ A MÁGICA:
+               Verificamos se o nome é 'Jacaré Brasil'.
+               Se for, o link vai para '/loja'. Se não, vai para '#' (lugar nenhum).
+            */
+            <Link 
+              key={loja.id} 
+              href={loja.nome === 'Jacaré Brasil' ? '/loja' : '#'}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className={styles.card}>
+                <div className={styles.cardImageWrapper}>
+                   <Image 
+                     src={loja.img} 
+                     alt={loja.nome} 
+                     width={70} 
+                     height={70} 
+                     style={{ objectFit: 'cover' }}
+                   />
+                </div>
                 
-                <div className={styles.storeDetails}>
-                  <span className={styles.rating}>
-                    ★ {loja.nota}
-                  </span>
-                  <div className={styles.dot}></div>
-                  <span>{loja.tipo}</span>
-                  <div className={styles.dot}></div>
-                  <span>{loja.distancia}</span>
-                </div>
+                <div className={styles.cardInfo}>
+                  <div className={styles.storeName}>{loja.nome}</div>
+                  
+                  <div className={styles.storeDetails}>
+                    <span className={styles.rating}>
+                      ★ {loja.nota}
+                    </span>
+                    <div className={styles.dot}></div>
+                    <span>{loja.tipo}</span>
+                    <div className={styles.dot}></div>
+                    <span>{loja.distancia}</span>
+                  </div>
 
-                <div className={styles.deliveryInfo}>
-                  {loja.novo && <span className={styles.tagNovo}>NOVO</span>}
-                  {loja.tempo} • {loja.taxa}
+                  <div className={styles.deliveryInfo}>
+                    {loja.novo && <span className={styles.tagNovo}>NOVO</span>}
+                    {loja.tempo} • {loja.taxa}
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
